@@ -1,0 +1,28 @@
+id: GRASS_FEATURE
+
+type: FEATURE
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:grass
+
+distributor: 
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+  threshold: 0.25
+
+locator: 
+  type: PATTERN
+  range:
+    min: 64
+    max: 128
+  pattern:
+    type: AND
+    patterns: 
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH
+        block: minecraft:grass_block
+        offset: -1
