@@ -1,0 +1,19 @@
+id: SETTING_UP
+
+version: 0.1.0
+
+author: PackFromScratch # Optional
+
+addons:
+  language-yaml: 0.1.+
+  chunk-generator-noise-3d: 0.1.+
+  config-noise-function: 0.1.+
+  palette-block-shortcut: 0.1.+
+  config-biome: 0.1.+
+  biome-provider-single: 0.1.+
+
+generator: NOISE_3D
+
+biomes:
+  type: SINGLE
+  biome: FIRST_BIOME
