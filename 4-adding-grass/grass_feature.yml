@@ -1,0 +1,34 @@
+id: GRASS_FEATURE
+type: FEATURE
+
+# Distributors determine if the structure(s) should
+# generate in a column of the world or not.
+distributor: 
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+  threshold: 0.25
+
+# Locators determine which Y levels in the column the structure(s) can generate at.
+# Surface locator places feature above every block with air above it
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range  #range values anchored for other locators to use
+        min: 0
+        max: 319
+    - type: PATTERN
+      range: *range  #references previously anchored range values
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:grass_block
+          - minecraft:dirt
+        offset: -1
+
+# The structures to be generated.
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:grass

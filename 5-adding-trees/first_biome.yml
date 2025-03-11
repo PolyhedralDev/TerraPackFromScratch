@@ -1,0 +1,30 @@
+id: FIRST_BIOME
+
+type: BIOME
+
+vanilla: minecraft:plains
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    expression: -y + 64
+
+  sampler-2d:
+    type: EXPRESSION
+    dimensions: 2
+    expression: (simplex(x, z)+1) * 4
+    samplers:
+      simplex:
+        type: OPEN_SIMPLEX_2
+        dimensions: 2
+        frequency: 0.04
+
+palette:
+  - GRASS_PALETTE: 319
+
+features:
+  trees:
+    - OAK_TREE_FEATURE
+  flora:
+    - GRASS_FEATURE
