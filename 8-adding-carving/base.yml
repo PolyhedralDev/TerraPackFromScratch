@@ -1,0 +1,11 @@
+id: BASE
+type: BIOME
+abstract: true
+
+ocean:
+  palette: BLOCK:minecraft:water
+  level: 62
+
+features:
+  preprocessors:
+    - CONTAIN_FLOATING_WATER

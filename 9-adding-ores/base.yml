@@ -1,0 +1,12 @@
+id: BASE
+type: BIOME
+abstract: true
+extends: ORES_DEFAULT
+
+ocean:
+  palette: BLOCK:minecraft:water
+  level: 62
+
+features:
+  preprocessors:
+    - CONTAIN_FLOATING_WATER

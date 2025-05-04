@@ -1,5 +1,8 @@
 id: SECOND_BIOME
 type: BIOME
+extends:
+  - BASE
+  - CARVING_LAND
 
 vanilla: minecraft:desert
 

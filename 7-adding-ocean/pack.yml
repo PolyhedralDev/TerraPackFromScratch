@@ -1,5 +1,5 @@
-id: ADDING_PIPELINE
-version: 0.6.0
+id: ADDING_OCEAN
+version: 0.7.0
 author: PackFromScratch
 
 addons:
@@ -36,9 +36,11 @@ biomes:
       type: SAMPLER
       sampler:
         dimensions: 2
-        type: CONSTANT
+        type: OPEN_SIMPLEX_2
+        frequency: 0.004
       biomes:
         - land: 1
+        - ocean: 1
     stages:
       - type: REPLACE
         sampler:
@@ -48,6 +50,13 @@ biomes:
         to:
           - FIRST_BIOME: 1
           - SECOND_BIOME: 1
+      - type: REPLACE
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.04
+        from: ocean
+        to:
+          - OCEAN_BIOME: 1
 
 stages:
   # The trees generation stage will come before flora, making it generate first.

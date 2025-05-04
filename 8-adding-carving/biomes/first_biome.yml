@@ -1,7 +1,10 @@
-id: SECOND_BIOME
+id: FIRST_BIOME
 type: BIOME
+extends:
+  - BASE
+  - CARVING_LAND
 
-vanilla: minecraft:desert
+vanilla: minecraft:plains
 
 terrain:
   sampler:
@@ -12,7 +15,7 @@ terrain:
   sampler-2d:
     type: EXPRESSION
     dimensions: 2
-    expression: (simplex(x, z)+1) * 2
+    expression: (simplex(x, z)+1) * 4
     samplers:
       simplex:
         type: OPEN_SIMPLEX_2
@@ -20,5 +23,10 @@ terrain:
         frequency: 0.04
 
 palette:
-  - SAND_PALETTE: 319
+  - GRASS_PALETTE: 319
 
+features:
+  trees:
+    - OAK_TREE_FEATURE
+  flora:
+    - GRASS_FEATURE

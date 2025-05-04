@@ -1,18 +1,23 @@
-id: SECOND_BIOME
+id: OCEAN_BIOME
 type: BIOME
+extends: BASE
 
-vanilla: minecraft:desert
+vanilla: minecraft:ocean
+
+ocean:
+  palette: BLOCK:minecraft:water
+  level: 62
 
 terrain:
   sampler:
     type: EXPRESSION
     dimensions: 3
-    expression: -y + 64
+    expression: -y + 32
 
   sampler-2d:
     type: EXPRESSION
     dimensions: 2
-    expression: (simplex(x, z)+1) * 2
+    expression: (simplex(x, z)+1) * 4
     samplers:
       simplex:
         type: OPEN_SIMPLEX_2
@@ -21,4 +26,3 @@ terrain:
 
 palette:
   - SAND_PALETTE: 319
-

@@ -1,0 +1,24 @@
+id: COAL_ORE_FEATURE
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 1234
+  threshold: 10 * (1/256)
+#averageCountPerChunk Divide by 16^2 to get % per column
+
+locator:
+  type: GAUSSIAN_RANDOM
+  amount: 1
+  height:
+    min: -64
+    max: 192
+  standard-deviation: (192-(-64))/6
+# Divide distance from min to max by 6 to fit 3 standard deviations (~99.7% of results) within the range.
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: COAL_ORE

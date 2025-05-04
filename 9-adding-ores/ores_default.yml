@@ -1,0 +1,7 @@
+id: ORES_DEFAULT
+type: BIOME
+abstract: true
+
+features:
+  ores:
+    - COAL_ORE_FEATURE

@@ -1,5 +1,5 @@
-id: ADDING_PIPELINE
-version: 0.6.0
+id: ADDING_ORES
+version: 0.9.0
 author: PackFromScratch
 
 addons:
@@ -16,6 +16,7 @@ addons:
   config-feature: "1.+"
   config-distributors: "1.+"
   config-locators: "1.+"
+  config-ore: "1.+"
   structure-block-shortcut: "1.+"
   generation-stage-feature: "1.+"
 
@@ -36,9 +37,11 @@ biomes:
       type: SAMPLER
       sampler:
         dimensions: 2
-        type: CONSTANT
+        type: OPEN_SIMPLEX_2
+        frequency: 0.004
       biomes:
         - land: 1
+        - ocean: 1
     stages:
       - type: REPLACE
         sampler:
@@ -48,11 +51,40 @@ biomes:
         to:
           - FIRST_BIOME: 1
           - SECOND_BIOME: 1
+      - type: REPLACE
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.004
+        from: ocean
+        to:
+          - OCEAN_BIOME: 1
 
 stages:
+  - id: preprocessors
+    type: FEATURE
+
   # The trees generation stage will come before flora, making it generate first.
   - id: trees
     type: FEATURE
 
   - id: flora
     type: FEATURE
+
+  - id: ores
+    type: FEATURE
+
+samplers:
+  simplex:
+    dimensions: 2
+    type: FBM
+    octaves: 4
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.0075
+  simplex3:
+    dimensions: 3
+    type: FBM
+    octaves: 4
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.0075

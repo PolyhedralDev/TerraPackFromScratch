@@ -1,5 +1,6 @@
 id: SECOND_BIOME
 type: BIOME
+extends: BASE
 
 vanilla: minecraft:desert
 
