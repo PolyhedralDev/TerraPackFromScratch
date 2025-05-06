@@ -28,7 +28,8 @@ locator:
         offset: -1
 
 # The structures to be generated.
+# Use minecraft:grass if version is prior to 1.20.3
 structures:
   distribution:
     type: CONSTANT
-  structures: BLOCK:minecraft:grass
+  structures: BLOCK:minecraft:short_grass

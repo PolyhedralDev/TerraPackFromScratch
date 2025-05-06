@@ -19,6 +19,7 @@ addons:
   structure-block-shortcut: "1.+"
   generation-stage-feature: "1.+"
 
+  structure-terrascript-loader: "1.+"
   structure-sponge-loader: "1.+"
 
 generator: NOISE_3D

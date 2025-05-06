@@ -19,6 +19,7 @@ addons:
   structure-block-shortcut: "1.+"
   generation-stage-feature: "1.+"
 
+  structure-terrascript-loader: "1.+"
   structure-sponge-loader: "1.+"
 
 generator: NOISE_3D
@@ -45,7 +46,7 @@ biomes:
       - type: REPLACE
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.04
+          frequency: 0.01
         from: land
         to:
           - FIRST_BIOME: 1
@@ -53,7 +54,7 @@ biomes:
       - type: REPLACE
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.004
+          frequency: 0.01
         from: ocean
         to:
           - OCEAN_BIOME: 1

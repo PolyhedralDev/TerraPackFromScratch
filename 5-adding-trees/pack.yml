@@ -1,7 +1,5 @@
 id: ADDING_TREES
-
 version: 0.5.0
-
 author: PackFromScratch
 
 addons:
@@ -20,6 +18,7 @@ addons:
   structure-block-shortcut: "1.+"
   generation-stage-feature: "1.+"
 
+  structure-terrascript-loader: "1.+"
   structure-sponge-loader: "1.+"
 
 generator: NOISE_3D
@@ -29,9 +28,8 @@ biomes:
   biome: FIRST_BIOME
 
 stages:
-  # The trees generation stage will come before flora, making it generate first.
   - id: trees
     type: FEATURE
-
+  # The trees generation stage will come before flora, making it generate first.
   - id: flora
     type: FEATURE

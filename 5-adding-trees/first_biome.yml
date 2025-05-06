@@ -1,5 +1,4 @@
 id: FIRST_BIOME
-
 type: BIOME
 
 vanilla: minecraft:plains
@@ -24,7 +23,7 @@ palette:
   - GRASS_PALETTE: 319
 
 features:
-  trees:
-    - OAK_TREE_FEATURE
   flora:
     - GRASS_FEATURE
+  trees:
+    - OAK_TREE_FEATURE

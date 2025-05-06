@@ -4,10 +4,6 @@ extends: BASE
 
 vanilla: minecraft:ocean
 
-ocean:
-  palette: BLOCK:minecraft:water
-  level: 62
-
 terrain:
   sampler:
     type: EXPRESSION

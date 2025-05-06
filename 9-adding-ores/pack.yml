@@ -16,11 +16,13 @@ addons:
   config-feature: "1.+"
   config-distributors: "1.+"
   config-locators: "1.+"
-  config-ore: "1.+"
   structure-block-shortcut: "1.+"
   generation-stage-feature: "1.+"
 
+  structure-terrascript-loader: "1.+"
   structure-sponge-loader: "1.+"
+
+  config-ore: "1.+"
 
 generator: NOISE_3D
 
@@ -46,7 +48,7 @@ biomes:
       - type: REPLACE
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.04
+          frequency: 0.01
         from: land
         to:
           - FIRST_BIOME: 1
@@ -54,7 +56,7 @@ biomes:
       - type: REPLACE
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.004
+          frequency: 0.01
         from: ocean
         to:
           - OCEAN_BIOME: 1
@@ -63,14 +65,14 @@ stages:
   - id: preprocessors
     type: FEATURE
 
+  - id: ores
+    type: FEATURE
+
   # The trees generation stage will come before flora, making it generate first.
   - id: trees
     type: FEATURE
 
   - id: flora
-    type: FEATURE
-
-  - id: ores
     type: FEATURE
 
 samplers:
