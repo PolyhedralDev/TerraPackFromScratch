@@ -1,6 +1,6 @@
-id: SETTING_UP
-version: 0.1.0
-author: PackFromScratch # Optional
+id: ADDING_TERRAIN
+version: 0.3.0
+author: PackFromScratch
 
 addons:
   language-yaml: "1.+"
@@ -9,6 +9,8 @@ addons:
   palette-block-shortcut: "1.+"
   config-biome: "1.+"
   biome-provider-single: "1.+"
+
+  config-palette: "1.+"
 
 generator: NOISE_3D
 

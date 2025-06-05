@@ -1,0 +1,30 @@
+id: ADDING_GRASS
+version: 0.4.0
+author: PackFromScratch
+
+addons:
+  language-yaml: "1.+"
+  chunk-generator-noise-3d: "1.+"
+  config-noise-function: "1.+"
+  palette-block-shortcut: "1.+"
+  config-biome: "1.+"
+  biome-provider-single: "1.+"
+
+  config-palette: "1.+"
+
+  config-feature: "1.+"
+  config-distributors: "1.+"
+  config-locators: "1.+"
+  structure-block-shortcut: "1.+"
+  generation-stage-feature: "1.+"
+
+generator: NOISE_3D
+
+biomes:
+  type: SINGLE
+  biome: FIRST_BIOME
+
+# Generation stages that come after the initial chunk generation
+stages:
+  - id: flora
+    type: FEATURE

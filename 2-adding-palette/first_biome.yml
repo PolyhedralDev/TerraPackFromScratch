@@ -9,4 +9,4 @@ terrain:
     base: 64
 
 palette:
-  - BLOCK:minecraft:stone: 319
+  - GRASS_PALETTE: 319

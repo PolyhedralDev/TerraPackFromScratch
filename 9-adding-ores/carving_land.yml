@@ -1,0 +1,29 @@
+id: CARVING_LAND
+type: BIOME
+abstract: true
+
+carving:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables:
+
+      carvingThreshold: 0.55 # Higher = less carving
+      carvingMinHeight: -63
+      carvingMaxHeight: 140
+      carvingCap: 1 # Caps the amount of base carving
+
+      spaghettiStrengthLarge: 0.59
+      spaghettiStrengthSmall: 0.57
+
+    expression: |
+      -carvingThreshold
+      + if(y<carvingMinHeight||y>carvingMaxHeight,0, // Skip unnecessary calculations
+        min(carvingCap,
+          // Spaghetti Caves
+          max(
+            spaghettiStrengthLarge * ((-(|simplex3(x,y+0000,z)|+|simplex3(x,y+1000,z)|)/2)+1),
+            spaghettiStrengthSmall * ((-(|simplex3(x,y+2000,z)|+|simplex3(x,y+3000,z)|)/2)+1)
+          )
+        )
+      )

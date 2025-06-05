@@ -1,0 +1,31 @@
+id: OAK_TREE_FEATURE
+type: FEATURE
+
+# The PADDED_GRID distributor places structures randomly according to a grid.
+distributor:
+  type: PADDED_GRID
+  width: 12 # How many blocks apart any two given structures can be.
+  padding: 4 # How large of an area the structure can randomly be placed in.
+  salt: 5864 # Determines the seed for the random placement.
+
+# TOP locator places feature at the highest block in the range
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range  #range values anchored for other locators to use
+        min: 0
+        max: 319
+    - type: PATTERN
+      range: *range  #references previously anchored range values
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:grass_block
+          - minecraft:dirt
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: oak_tree

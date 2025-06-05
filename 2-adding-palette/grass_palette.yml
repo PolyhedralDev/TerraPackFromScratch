@@ -1,0 +1,15 @@
+id: GRASS_PALETTE
+type: PALETTE
+
+layers:
+  # Top palette layer
+  - materials: minecraft:grass_block
+    layers: 1
+
+  # Second palette layer that will be 2 layers thick
+  - materials: minecraft:dirt
+    layers: 2
+
+  # Last palette layer
+  - materials: minecraft:stone
+    layers: 1 # The last palette layer will make up the rest of the palette

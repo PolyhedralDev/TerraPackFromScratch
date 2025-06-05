@@ -1,0 +1,68 @@
+id: ADDING_OCEANS
+version: 0.7.0
+author: PackFromScratch
+
+addons:
+  language-yaml: "1.+"
+  chunk-generator-noise-3d: "1.+"
+  config-noise-function: "1.+"
+  palette-block-shortcut: "1.+"
+  config-biome: "1.+"
+  biome-provider-single: "1.+"
+  biome-provider-pipeline-v2: "1.+"
+
+  config-palette: "1.+"
+
+  config-feature: "1.+"
+  config-distributors: "1.+"
+  config-locators: "1.+"
+  structure-block-shortcut: "1.+"
+  generation-stage-feature: "1.+"
+
+  structure-terrascript-loader: "1.+"
+  structure-sponge-loader: "1.+"
+
+generator: NOISE_3D
+
+biomes:
+  type: PIPELINE
+  resolution: 4
+  blend:
+    amplitude: 2
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.1
+  pipeline:
+    source:
+      type: SAMPLER
+      sampler:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.004
+      biomes:
+        - land: 1
+        - ocean: 1
+    stages:
+      - type: REPLACE
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+        from: land
+        to:
+          - FIRST_BIOME: 1
+          - SECOND_BIOME: 1
+      - type: REPLACE
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+        from: ocean
+        to:
+          - OCEAN_BIOME: 1
+
+stages:
+  # The trees generation stage will come before flora, making it generate first.
+  - id: trees
+    type: FEATURE
+
+  - id: flora
+    type: FEATURE
